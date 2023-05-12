@@ -1,0 +1,432 @@
+\documentclass[10pt]{article} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{amsmath} 
+\usepackage{amsfonts} 
+\usepackage{amssymb} 
+\usepackage[version=4]{mhchem} 
+\usepackage{stmaryrd} 
+\usepackage{mathrsfs} 
+
+\title{Brownian Motion of Spins } 
+
+
+\author{Ryogo Kubo and Natsuki HasHitsume*\\
+Department of Physics, University of Tokyo, Tokyo\\
+*Department of Physics, Ochanomizu University\\
+Bunkyo-ku, Tokyo} 
+\date{} 
+
+
+\begin{document} 
+\maketitle 
+(1970年11月4日收到)
+
+\begin{abstract} 
+讨论了自旋的布朗运动的随机模型。如果假定摩擦阻力伴随着引起布朗运动的随机场，自旋运动的随机方程就会导致福克-普朗克方程，从而保证接近热平衡。假设有Landau-Lifshitz类型的摩擦，平均磁矩被证明是服从Bloch方程的。
+\end{abstract} 
+
+\section{§1. Introduction} 
+在一个凝聚系统中，自旋的运动由于与周围环境相互作用的影响而变得非常复杂。然而，这种复杂性本身允许一个理想化，即引入一个随机的模型。在这里，我们认为最简单的理想化是布朗运动模型，其中自旋与周围环境的相互作用由一个随机波动的磁场来表示。那么自旋的运动将由以下类型的随机方程来描述
+
+\[
+\frac{d \boldsymbol{M}}{d t}=\gamma\left\{\boldsymbol{H}(t)+\boldsymbol{H}^{\prime}(t)\right\} \times \boldsymbol{M}
+\] 
+
+其中\(\boldsymbol{H}(t)\) 是观察过程中控制的外部场，\(\boldsymbol{H}^{\prime}(t)\) 是随机磁场。几年前，一位作者在他的随机Liouville方程理论的基础上简要地讨论了这样一个经典自旋模型。\({ }^{2}\) Yoshimori和Korringa\({ }^{3)}\) 在量子自旋的随机海森堡方程的基础上发展了一个类似的理论。当波动场被假定为高斯过程并满足缩小条件时，\({ }^{1)}\) 这些理论给出了磁化的Bloch方程。然而，这样得出的方程有一个缺陷。也就是说，磁化并没有向其对应于给定外场的平衡值放松，而是向零值放松。我们不能在理论中加入有限的温度和相应的平衡磁化。
+
+为了克服这一困难，已经做了一些尝试。Korringa \({ }^{4)}\) 在随机薛定谔方程中引入了一个复杂的时间。它的虚部对应于倒数的温度。使用这个形式主义，Korringa等人\({ }^{5)}\) 得到了一个修改的Bloch方程，通过它，磁化放松到一个有限的平衡值。Nakano和Yoshimori\({ }^{6)}\) 借助于Kikuchi开发的路径概率方法，提出了\(^{2}\) 另一种方法。"从本质上讲，他们假设了一个查普曼-斯莫楚夫斯基方程（一个主方程）的类型
+
+\[
+\frac{d p_{i}}{d t}=\sum_{j} \theta_{i j}\left(p_{j} e^{\left(E_{j}-E_{i}\right) / 2 k T}-p_{i} e^{\left(E_{i}-E_{j}\right) / 2 k T}\right)
+\] 
+
+其中\(i\) 和\(j\) 指的是所考虑的系统（自旋）的状态，\(p_{j}\) 是在\(j\) 的状态下发现系统的概率，\(E_{j}\) 是\(j\) 的状态的能量。他们使用（1）型的随机运动方程来确定过渡概率\(\theta_{i j}\) 。然而，他们引入了相当任意的因素\(\exp \left( \pm\left(E_{i}-E_{j}\right) / 2 k T\right)\) ，以确保在有限的温度下接近平衡。
+
+在这里，我们从一个有点不同的观点来考虑这个问题，它对应于布朗运动的朗温理论。众所周知，在布朗运动理论中，作用在布朗粒子上的随机力必然与摩擦力相结合，这一事实代表了一个非常普遍的自然规律--波动耗散定理。\({ }^{8)}\) 这意味着随机运动方程，即公式（1），必须辅以摩擦力。那么，公式（1）将被这样一个方程所取代，即
+
+\[
+\frac{d \boldsymbol{M}}{d t}=\gamma\left\{\boldsymbol{H}(t)+\boldsymbol{H}^{\prime}(t)-\kappa \frac{d \boldsymbol{M}}{d t}\right\} \times \boldsymbol{M}
+\] 
+
+摩擦力以某种方式与随机场\(\boldsymbol{H}^{\prime}\) 相关，由波动耗散定理决定。
+
+与我们熟悉的自由粒子或谐波振荡器的布朗运动理论相比，自旋的布朗运动涉及一些复杂的问题。这些复杂性来自于公式（1）或（2）的准非线性结构。磁化\(\boldsymbol{M}(t)\) 在随机场\(\boldsymbol{H}^{\prime}(t)\) 中不是线性的，因此，不能采用简单的谐波分析。事实上，在一般情况下，即使假定基本过程\(\boldsymbol{H}^{\prime}(t)\) 是简单的，例如高斯过程，公式（1）或（2）都很难解决。那么\(\boldsymbol{M}(t)\) 的随机过程就相当复杂，不容易进行分析处理。对于这样的问题，已经进行了一些尝试\(^{9) 10)}\) ，目的是将其应用于低场的磁共振。
+
+然而，在本文中，我们不会去研究这样一个复杂的问题，但我们只限于缩小极限的情况，其中随机场是弱的，波动非常快，所以条件是
+
+\[
+\Delta \tau_{c} \ll 1, \quad \Delta \simeq \gamma H^{\prime}
+\] 
+
+得到满足，其中\(H^{\prime}\) 是平均振幅，而\(\tau_{f}\) 是随机场的相关时间。在这个极限中，\(\boldsymbol{M}(t)\) 的随机过程是由福克-普朗克方程描述的。在平均情况下，磁化矢量将被证明服从布洛赫方程，松弛到有限的热平衡。\({ }^{11)}\) 
+
+\section{§2. A classical spin rotating without friction} 
+为了使问题的性质清楚，我们在这里从最简单的波动自旋运动的随机模型开始，如公式（1）所代表的。对于处理这种类型的随机过程，最方便的是引入随机的Liouville方程\({ }^{2)}\) ，在这种情况下写为
+
+\[
+\frac{\partial}{\partial t} \rho(\boldsymbol{M}, t)=-\frac{\partial}{\partial \boldsymbol{M}} \cdot\left(\dot{\boldsymbol{M}}_{\rho}(\boldsymbol{M}, t)\right)
+\] 
+
+或
+
+\[
+\frac{\partial}{\partial t} \rho=-i \mathcal{L}(t) \rho
+\] 
+
+其中Liouville算子\(\mathcal{L}\) 被写为
+
+\[
+\mathcal{L}=\mathcal{L}_{0}+\mathcal{L}^{\prime}(t)
+\] 
+
+其中
+
+\[
+\begin{aligned}
+& \mathcal{L}_{0}=\omega_{0} L_{z}, \\
+& \mathcal{L}^{\prime}(t)=\gamma \boldsymbol{H}^{\prime}(t) \cdot \boldsymbol{L}, \\
+& \boldsymbol{L}=-i \boldsymbol{M} \times \frac{\partial}{\partial \boldsymbol{M}} .
+\end{aligned}
+\] 
+
+\(\boldsymbol{H}_{0}\) 的方向被当作\(z\) 轴，\(\omega_{0}=\gamma H_{0}\) 是\(\boldsymbol{H}_{0}\) 中自旋的拉摩尔频率。算子\(\boldsymbol{L}\) 是\(\boldsymbol{M}\) 空间中的角动量算子。方程（4）或（5）是概率密度\(\rho(\boldsymbol{M}, t)\) 的随机Liouville方程，用于寻找\(t\) 时间的矢量\(\boldsymbol{M}\) ，在\(\boldsymbol{M}\) 空间的给定点的邻近区域。它包含了随机过程\(\boldsymbol{H}^{\prime}(t)\) ，从中应确定\(\boldsymbol{M}(t)\) 的随机特性。对于初始分布\(\rho(\boldsymbol{M}, 0)\) 和过程\(\boldsymbol{H}^{\prime}(t)\) 的给定样本，方程（5）可以正式求解为
+
+\[
+\rho(\boldsymbol{M}, t)=\exp _{\leftarrow}\left\{-i \int_{0}^{t} \mathcal{L}\left(t^{\prime}\right) d t^{\prime}\right\} \rho(\boldsymbol{M}, 0)
+\] 
+
+具体来说，对于
+
+\[
+\rho(\boldsymbol{M}, 0)=\delta\left(\boldsymbol{M}-\boldsymbol{M}^{\prime}\right)
+\] 
+
+的最终分布可以写成
+
+\[
+\rho(\boldsymbol{M}, t)=\left(\boldsymbol{M}\left|\exp _{\leftarrow}\left\{-i \int_{0}^{t} \mathcal{L}\left(t^{\prime}\right) d t^{\prime}\right\}\right| \boldsymbol{M}^{\prime}\right)
+\] 
+
+其中括号符号用于表示变换的积分核。这个变换在\(\boldsymbol{H}^{\prime}(t)\) 的整个集合上被平均化，以得到\(\boldsymbol{M}^{\prime}\) 到\(\boldsymbol{M}\) 在时间间隔\((0, t)\) 的过渡概率
+
+\[
+f\left(\boldsymbol{M} t \mid \boldsymbol{M}^{\prime} 0\right)=\left(\boldsymbol{M}\left|\left\langle\exp _{\leftarrow}\left\{-i \int_{0}^{t} \mathcal{L}\left(t^{\prime}\right) d t^{\prime}\right\}\right\rangle\right| \boldsymbol{M}^{\prime}\right)
+\] 
+
+其中\textbackslash  langle\textbackslash  rangle指的是集合平均。因此，我们可以称
+
+\[
+\Phi(t)=\left\langle\exp _{\leftarrow}\left\{-i \int_{0}^{t} \mathcal{L}\left(t^{\prime}\right) d t^{\prime}\right\}\right\rangle
+\] 
+
+是过程\(\boldsymbol{M}(t)\) 的过渡算子。现在的问题是计算这个过渡算子（13）并找到相关物理量的平均数。
+
+这不是一项容易的任务。一般来说，除非引入一些简化，否则不可能推导出过渡概率的分析性表达。我们可以合理地假设过程\(\boldsymbol{H}^{\prime}(t)\) 是高斯的。Toyabe \(^{10)}\) 和Toyabe和Kubo.已经更详细地处理了这种假设下的布朗自旋运动。\({ }^{9)}\) 即使是这样的简化，也不可能进行精确的处理，因为不同时间点的算子\(\mathcal{L}(t)\) 是不能互换的。只有在缩小条件（3）的限制下，理论才变得简单。然而，如果满足收窄条件（3），不仅对高斯调制\(\boldsymbol{H}^{\prime}(t)\) ，而且对更普遍的一类过程\(\boldsymbol{H}^{\prime}(t)\) 也可以实现同样的简化，只要它足够适度。我们在这里并不试图给出温和过程的严格定义，但我们指的是某种中心极限定理对其成立的过程。因此，一个由一系列不规则脉冲组成的过程被排除在外。
+
+在由以下定义的相互作用表示中
+
+\[
+\hat{\rho}=e^{i \mathcal{L}_{0} t_{\rho}}
+\] 
+
+和
+
+\[
+\Omega(t)=e^{i \mathcal{L}_{0} t} \mathcal{L}^{\prime}(t) e^{-i \mathcal{L}_{0} t}
+\] 
+
+过渡算子（13）被写成
+
+\[
+\Phi(t)=e^{-i \mathcal{L}_{0} t}\left\langle\exp _{\leftarrow}\left(-i \int_{0}^{t} \Omega\left(t^{\prime}\right) d t^{\prime}\right)\right\rangle e^{i \mathcal{L}_{0} t}
+\] 
+
+其中，只有算子\(\Omega(t)\) 包含随机场\(\boldsymbol{H}^{\prime}(t)\) ，对于该场，我们假定
+
+\[
+\begin{aligned}
+& \left\langle\boldsymbol{H}^{\prime}(t)\right\rangle=0, \\
+& \left\langle H_{\alpha}^{\prime}\left(t_{1}\right) H_{\beta}^{\prime}\left(t_{2}\right)\right\rangle=0, \quad \alpha \neq \beta, \\
+& \gamma^{2}\left\langle H_{x}^{\prime}\left(t_{1}\right) H_{x}^{\prime}\left(t_{2}\right)\right\rangle=\gamma^{2}\left\langle H_{y}^{\prime}\left(t_{1}\right) H_{y}^{\prime}\left(t_{2}\right)\right\rangle=\psi_{\perp}\left(t_{1}-t_{2}\right),
+\end{aligned}
+\] 
+
+\[
+\gamma^{2}\left\langle H_{z}^{\prime}\left(t_{1}\right) H_{z}^{\prime}\left(t_{2}\right)\right\rangle=\psi_{\|}\left(t_{1}-t_{2}\right)
+\] 
+
+当公式（15）右侧的有序指数算子被展开时，第一项变成了
+
+\[
+\begin{aligned}
+& -\int_{0}^{t} d t_{1} \int_{0}^{t_{1}} d t_{2} e^{i \mathcal{L}_{0} t_{1}}\left\langle\mathcal{L}^{\prime}\left(t_{1}\right) e^{-i \mathcal{L}_{0}\left(t_{1}-t_{2}\right)} \mathcal{L}^{\prime}\left(t_{2}\right) e^{i \mathcal{L}_{0}\left(t_{1}-t_{2}\right)}\right\rangle e^{-i \mathcal{L}_{0} t_{1}} \\
+\simeq & -\int_{0}^{t} d t_{1} e^{i \mathcal{L}_{0} t_{1}} \int_{0}^{\infty}\left\langle\mathcal{L}^{\prime}\left(t_{1}\right) e^{-i \mathcal{L}_{0} \tau} \mathcal{L}^{\prime}\left(t_{1}-\tau\right) e^{i \mathcal{L}_{0} \tau}\right\rangle e^{-i \mathcal{L}_{0} t_{1}} \\
+= & -\int_{0}^{t} d t_{1} e^{i \mathcal{L}_{0} t_{1}}\left\{i \delta \omega_{0} L_{z}+\frac{1}{2 \tau_{1}}\left(L_{x}^{2}+L_{y}^{2}\right)+\frac{1}{2 \tau_{0}} L_{z}^{2}\right\} e^{-i \mathcal{L}_{0} t_{1}},
+\end{aligned}
+\] 
+
+其中
+
+\[
+\begin{aligned}
+& \frac{1}{2 \tau_{0}}=\int_{0}^{\infty} \psi_{/ /}(t) d t, \\
+& \frac{1}{2 \tau_{1}}=\int_{0}^{\infty} \psi_{\perp}(t) \cos \omega_{0} t d t, \\
+& \delta \omega_{0}=\int_{0}^{\infty} \psi_{\perp}(t) \sin \omega_{0} t d t .
+\end{aligned}
+\] 
+
+在转换公式（19）时，我们使用了假设，即\(\psi_{\|}\)or \(\psi_{\perp}\) 的相关时间\(\tau_{c}\) 与所考虑的时间\(t\) 相比非常短，即
+
+\[
+t \gg \tau_{c}
+\] 
+
+因此允许将\(t_{2}\) 的下限扩展到\(-\infty\) 。式（15）中平均有序指数算子的高阶扩展项可以用类似的方式进行评估。只要随机场\(\boldsymbol{H}^{\prime}(t)\) 是适度的，并且满足缩小条件（3），只有那些重要的项被简化为算子（19）的乘积，因此过渡算子（15）的形式为
+
+\[
+\begin{aligned}
+\Phi(t)= & e^{-i \mathcal{L}_{0} t} \exp \left[-\int_{0}^{t} d t_{1} e^{i \mathcal{L}_{0} t}\left\{i \delta \omega_{0} L_{z}+\frac{1}{2 \tau_{1}}\left(L_{x}^{2}+L_{y}^{2}\right)\right.\right. \\
+& \left.\left.+\frac{1}{2 \tau_{0}} L_{z}^{2}\right\} e^{-i \mathcal{L}_{0} t}\right] e^{i \mathcal{L}_{0} t} .
+\end{aligned}
+\] 
+
+通过对上述表达式与\(t\) 进行微分，我们发现
+
+\[
+\frac{\partial}{\partial t} \Phi(t)=-i\left(\omega_{0}+\delta \omega_{0}\right) L_{z}+\frac{1}{2 \tau_{1}}\left(L_{x}^{2}+L_{y}^{2}\right)+\frac{1}{2 \tau_{0}} L_{z}^{2}
+\] 
+
+因此，过渡概率\(f\) 是该方程的基本解、
+
+\[
+\left[\frac{\partial}{\partial t}+i\left(\omega_{0}+\delta \omega_{0}\right) L_{z}+\frac{1}{2 \tau_{1}}\left(L_{x}^{2}+L_{y}^{2}\right)+\frac{1}{2 \tau_{0}} L_{z}^{2}\right] f=0 .
+\] 
+
+这可以写成
+
+\[
+\left[\frac{\partial}{\partial t}+i \gamma(1+\delta) \boldsymbol{H}_{0} \cdot \mathbf{L}-(i \boldsymbol{L} \cdot \boldsymbol{D} \cdot i \boldsymbol{L})\right] f=0
+\] 
+
+其中\(\boldsymbol{H}_{0}\) 是外场，扩散张量\(\boldsymbol{D}\) 定义为
+
+\[
+\boldsymbol{D}=D_{1}\left(1-\frac{\boldsymbol{H}_{0} \boldsymbol{H}_{0}}{H_{0}^{2}}\right)+D_{0} \frac{\boldsymbol{H}_{0} \boldsymbol{H}_{0}}{H_{0}^{2}}, \quad D_{1}=\frac{1}{2 \tau_{1}}, \quad D_{0}=\frac{1}{2 \tau_{0}}
+\] 
+
+松弛时间\(\tau_{0}\) 和\(\tau_{1}\) 以及分数位移\(\delta=\delta \omega_{0} / \omega_{0}\) 由公式（20）定义。方程（24）可用于随时间变化的外场\(\boldsymbol{H}_{0}(t)\) ，只要其时间变化在相关时间\(\tau_{c}\) 中是缓慢的。
+
+磁矩的平均值
+
+\[
+\langle\boldsymbol{M}(t)\rangle=\int \boldsymbol{M} f(\boldsymbol{M}, t) d \boldsymbol{M}
+\] 
+
+的平均值很容易被发现，以满足布洛赫方程
+
+\[
+\begin{aligned}
+& \frac{d}{d t}\left\langle M_{x}\right\rangle=-\omega_{0}^{\prime}\left\langle M_{y}\right\rangle-\frac{\left\langle M_{x}\right\rangle}{T_{2}}, \quad \omega_{0}^{\prime}=\omega_{0}+\delta \omega_{0}, \\
+& \frac{d}{d t}\left\langle M_{y}\right\rangle=\omega_{0}^{\prime}\left\langle M_{x}\right\rangle-\frac{\left\langle M_{y}\right\rangle}{T_{2}}, \\
+& \frac{d\left\langle M_{z}\right\rangle}{d t}=\frac{\left\langle M_{z}\right\rangle}{T_{1}},
+\end{aligned}
+\] 
+
+其中纵向和横向松弛时间\(T_{1}\) 和\(T_{2}\) 由以下公式给出
+
+\[
+T_{1}=\tau_{1}, \quad \frac{1}{T_{2}}=\frac{1}{2}\left(\frac{1}{\tau_{0}}+\frac{1}{\tau_{1}}\right)
+\] 
+
+根据公式（26），磁矩放松到零。正如在介绍中提到的，这必然是由缺少摩擦项的公式（1）所引起的。
+
+\section{§3. A classical spin rotating with friction} 
+我们现在考虑一个经典自旋，它在旋转时受到摩擦阻力。按照朗道和利夫希茨\(^{12)}\) ，我们可以假设运动方程、
+
+\[
+\frac{d}{d t} \boldsymbol{M}=\gamma \boldsymbol{H} \times \boldsymbol{M}-\eta(\boldsymbol{H} \times \boldsymbol{M}) \times \boldsymbol{M} \text {. }
+\] 
+
+这是从\(d \boldsymbol{M} / d t\) 是\(\boldsymbol{H} \times \boldsymbol{M}\) 和\((\boldsymbol{H} \times \boldsymbol{M}) \times \boldsymbol{M}\) 的线性组合的观察中得到的，如果\(\boldsymbol{M}\) 的大小应被保留。我们同样可以假设另一种类型的方程、
+
+\[
+\frac{d \boldsymbol{M}}{d t}=\gamma^{\prime}\left(\boldsymbol{H}-\kappa \frac{d \boldsymbol{M}}{d t}\right) \times \boldsymbol{M}
+\] 
+
+正如在介绍中提到的那样。后者的方程可以被转化为
+
+\[
+\frac{d \boldsymbol{M}}{d t}=\frac{\gamma^{\prime}}{1+\left(\gamma^{\prime} \kappa\right)^{2} M^{2}}(\boldsymbol{H}-\kappa \boldsymbol{H} \times \boldsymbol{M}) \times \boldsymbol{M}
+\] 
+
+这与公式(28)相同，只是有重正化系数。因此我们在这里使用公式（28）。
+
+如果场\(\boldsymbol{H}\) 由外部场\(\boldsymbol{H}_{0}(t)\) 和随机场\(\boldsymbol{H}^{\prime}(t)\) 组成，即
+
+\[
+\boldsymbol{H}(t)=\boldsymbol{H}_{0}(t)+\boldsymbol{H}^{\prime}(t)
+\] 
+
+式（28）是我们对经典自旋的随机运动方程。这可以进一步简化为
+
+\[
+\frac{d}{d t} \boldsymbol{M}(t)=\gamma\left(\boldsymbol{H}_{0}(t)+\boldsymbol{H}^{\prime}(t)\right) \times \boldsymbol{M}-\eta\left(\boldsymbol{H}_{0} \times \boldsymbol{M}\right) \times \boldsymbol{M}
+\] 
+
+通过省略摩擦项中的随机场。正如我们将在后面看到的，爱因斯坦关系要求
+
+\[
+\eta=1 / 2 \tau_{1} k T
+\] 
+
+所以我们有数量级的估计、
+
+\[
+O\left(n \boldsymbol{H}^{\prime} \times \boldsymbol{M}\right)=H^{\prime} M / 2 \tau_{1} k T=\Delta^{2} \tau_{c} H^{\prime} M / k T
+\] 
+
+由于缩小的条件，也由于通常的实验条件，即
+
+\[
+H^{\prime} M \ll k T
+\] 
+
+摩擦项的随机部分的影响要比随机场的直接影响小得多，因此，上述简化是合理的。
+
+在粗粒化（21）、窄化（3）和\(\boldsymbol{H}^{\prime}(t)\) 的适度行为的假设下，从（31）推导出Fokker-Planck方程是直接的。未扰动的Liouville算子，公式（7），现在被替换为
+
+\[
+\mathcal{L}_{0}(t)=\omega_{0} L_{z}+\eta H_{0}\left(L_{x} M_{y}-L_{y} M_{x}\right)
+\] 
+
+公式（33）右侧第二项的存在似乎会引入复杂的问题。然而，与（32）相同的估计表明，与随机场的相关时间\(\tau_{c}\) 所表征的时间速率相比，它只引起\(\exp \left(i \mathcal{L}_{0} t\right)\) 的非常缓慢的时间变化，因此，公式（19）中括号内的算子不需要改变。因此，公式（24）的唯一变化是增加了术语
+
+\[
+\frac{\partial}{\partial \boldsymbol{M}} \eta\left(\boldsymbol{H}_{0} \times \boldsymbol{M}\right) \times \boldsymbol{M} f=i \eta \boldsymbol{L}\left(\boldsymbol{M} \times \boldsymbol{H}_{0}\right) f
+\] 
+
+所以公式（24）现在被概括为
+
+\[
+\left[\frac{\partial}{\partial t}+i \gamma(1+\boldsymbol{\delta}) \boldsymbol{H}_{0} \boldsymbol{L}+i \boldsymbol{L} \boldsymbol{D}\left(i \boldsymbol{L}-\frac{\boldsymbol{M} \times \boldsymbol{H}_{0}}{k T}\right)\right] f=0
+\] 
+
+其中包括与随机场相关的摩擦效应。这里我们已经使用了（31）的关系。在由以下定义的极坐标中
+
+\[
+M_{x}=M \sin \theta \cos \phi, \quad M_{y}=M \sin \theta \sin \phi, \quad M_{z}=M \cos \theta
+\] 
+
+公式（35）被写成
+
+\[
+\begin{aligned}
+\left(\frac{\partial}{\partial t}+\right. & \left.\omega_{0}^{\prime} \frac{\partial}{\partial \phi}\right) f=\left[\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left\{\sin \theta D_{1}\left(\frac{\partial}{\partial \theta}+\frac{H_{0} M \sin \theta}{k T}\right)\right\}\right. \\
+& \left.+\frac{1}{\sin ^{2} \theta} \frac{\partial}{\partial \phi}\left(D_{0} \frac{\partial}{\partial \phi}\right)\right] f
+\end{aligned}
+\] 
+
+这表明，该函数
+
+\[
+\exp \left(H_{0} M \cos \theta / k T\right)
+\] 
+
+实际上是静态场中的平衡分布。如果进一步将极度缩小的条件
+
+\[
+\omega_{0} \tau_{c} \ll 1
+\] 
+
+满足，松弛时间\(\tau_{0}\) 和\(\tau_{1}\) 变得相等，扩散张量\(D\) 变得各向同性，而公式（35）仅仅成为浸入粘稠液体中的电偶极的旋转扩散方程，正如多年前德拜所证明的那样。\({ }^{13)}\) 
+
+平均磁矩\(\langle M\rangle\) 的运动方程很容易从公式（34）中推导出来，其公式为
+
+\[
+\begin{aligned}
+& \frac{d\left\langle M_{x}\right\rangle}{d t}=-\omega_{0}^{\prime}\left\langle M_{y}\right\rangle-\frac{1}{T_{2}}\left\langle M_{x}\right\rangle-\frac{H_{0}\left\langle M_{x} M_{z}\right\rangle}{2 T_{1} k T}, \\
+& \frac{d\left\langle M_{y}\right\rangle}{d t}=\omega_{0}^{\prime}\left\langle M_{x}\right\rangle-\frac{1}{T_{2}}\left\langle M_{y}\right\rangle-\frac{H_{0}\left\langle M_{y} M_{z}\right\rangle}{2 T_{1} k T}, \\
+& \frac{d\left\langle M_{z}\right\rangle}{d t}=-\frac{1}{T_{1}}\left\langle M_{z}\right\rangle+\frac{H_{0}\left\langle M_{x}^{2}+M_{y}^{2}\right\rangle}{2 T_{1} k T} .
+\end{aligned}
+\] 
+
+由于基本方程（30）的非线性，这些方程包括较高磁矩的平均数，一般来说构成一个方程的层次结构。如果对平衡的偏离很小，这个层次结构可以被解耦。在平衡状态下，方程（36）的第三个方程给出了
+
+\[
+\left\langle M_{z}\right\rangle=H_{0}\left\langle M_{x}^{2}+M_{y}^{2}\right\rangle / 2 k T=H_{0}\left\langle M_{x}^{2}\right\rangle / k T
+\] 
+
+公式（37）表明，磁感应强度\(\chi\) 由以下公式给出
+
+\[
+\chi=\left\langle M_{x}^{2}\right\rangle_{0} / k T
+\] 
+
+符合统计力学的著名结果。
+
+只要外场不是太强，以至于\(H_{0} M \ll k T\) ，（36）的第一和第二方程右边的最后一项作为阻尼对\(\left\langle M_{x}\right\rangle\) 和\(\left\langle M_{y}\right\rangle\) 可以忽略不计，因此我们有布洛赫方程
+
+\[
+\begin{aligned}
+& \frac{d}{d t}\left\langle M_{x}\right\rangle=-\omega_{0}^{\prime}\left\langle M_{y}\right\rangle-\frac{1}{T_{2}}\left\langle M_{x}\right\rangle, \\
+& \frac{d}{d t}\left\langle M_{y}\right\rangle=\omega_{0}^{\prime}\left\langle M_{x}\right\rangle-\frac{1}{T_{2}}\left\langle M_{y}\right\rangle, \\
+& \frac{d}{d t}\left\langle M_{z}\right\rangle=-\frac{1}{T_{1}}\left(\left\langle M_{z}\right\rangle-\chi H_{0}\right) .
+\end{aligned}
+\] 
+
+值得注意的是，尽管我们从公式（28）中的Landau-Lifshitz摩擦开始，但我们还是被引向了Bloch型松弛。
+
+方程（34）包含平均磁矩向对应于瞬时磁场的平衡值的松弛。这个方程可用于研究当外场\(H_{0}(t)\) 在时间上变化时，磁旋的响应和噪声，只要它在时间上的变化与波动场相比足够缓慢。
+
+\section{§4. Concluding remarks} 
+我们已经表明，在代表与周围环境相互作用的随机场的影响下，可以为经典自旋制定一个现象学理论。如果假定随机场是弱的、适度的和充分短相关的，就有可能推导出自旋矩随机运动的福克-普朗克方程。由于有摩擦力伴随着随机场，福克-普朗克方程保证了在有限温度下接近平衡。从形式上看，将这种处理方法扩展到量子自旋似乎很容易。在量子力学中，我们不再能确定自旋的所有成分，因此我们不得不从密度矩阵的角度来考虑，其运动方程为
+
+\[
+\frac{\partial \rho}{\partial t}=\frac{1}{i \hbar}[\mathcal{H}(t), \rho]
+\] 
+
+自旋的密度矩阵可以用算子球面谐波展开，其前几个成员为
+
+\[
+\begin{aligned}
+& 1, S_{x}, S_{y}, S_{z}, S_{x} S_{y}+S_{y} S_{x}, S_{y} S_{z}+S_{z} S_{y}, S_{z} S_{x}+S_{x} S_{z} \\
+& S_{x}^{2}-S_{y}^{2}, 2 S_{z}^{2}-S_{x}^{2}-S_{y}^{2}, \cdots .
+\end{aligned}
+\] 
+
+因此，我们可以把
+
+\[
+\rho=A+c \boldsymbol{M}(t) \boldsymbol{S}+\cdots,
+\] 
+
+其中膨胀系数\(\boldsymbol{M}\) 是\(\boldsymbol{S}\) 在\(t\) 时间的量子力学期望值，即
+
+\[
+\boldsymbol{M}(t)=\operatorname{Tr} \rho(t) \mathbf{S},
+\] 
+
+是归一化是这样选择的，即
+
+\[
+c^{-1}=\operatorname{Tr} S_{x}^{2}=(2 S+1) S(S+1) .
+\] 
+
+如果汉密尔顿\(\mathcal{H}(t)\) 是
+
+\[
+\mathscr{H}(t)=\left(\boldsymbol{H}_{0}+\boldsymbol{H}^{\prime}\right) \gamma \hbar \boldsymbol{S}
+\] 
+
+式（40）给出了方程
+
+\[
+\frac{d \boldsymbol{M}}{d t}=\gamma\left(\boldsymbol{H}_{0}+\boldsymbol{H}^{\prime}\right) \times \boldsymbol{M}
+\] 
+
+这是\(\boldsymbol{M}(t)\) 的随机运动方程，或\(\mathbf{S}\) 的量子力学期望。从现象学的角度来看，这个方程可以再次补充一个摩擦项，以保证接近热平衡。那么，在前面几节中讨论的处理方法可被视为适用于量子自旋和经典自旋。对\(\boldsymbol{M}\) 分布的平均意味着对随机场\(\boldsymbol{H}^{\prime}(t)\) 的随机过程集合的量子力学期望的平均。然而，关于物理观测的意义，仍然存在着某些模糊不清的地方。例如，如何解释\(\left\langle\boldsymbol{M}\left(t_{1}\right) \boldsymbol{M}\left(t_{2}\right)\right\rangle\) 型的相关函数并不十分清楚。一般来说，量子系统的布朗运动理论目前处于相当不令人满意的状态，仍然是统计力学中的一个突出问题。在此，我们将不再进一步探讨这个概念上的复杂问题。
+
+这项工作的主要部分是在1963年夏天完成的，当时我们住在芝加哥大学的金属研究所。我们希望对S.A.Rice教授和M.H.Cohen教授表示感谢，感谢他们对这个夏天的愉快回忆。我们也很高兴将这篇小作品献给长宫武夫教授的60岁生日。
+
+
